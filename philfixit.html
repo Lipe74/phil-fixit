@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phil-Fixit – Formation & Support Informatique à Beaufays</title>
+<meta name="description" content="Phil-Fixit, formation informatique, dépannage et création de sites web à Beaufays. Devis gratuit, sans engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f97316">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Phil-Fixit">
+<link rel="apple-touch-icon" href="images/logo.png">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: #fafafa; color: #1a1a1a; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+
+:root {
+  --orange: #f97316;
+  --orange2: #ea580c;
+  --orange-pale: #fff7ed;
+  --orange-border: #fed7aa;
+  --dark: #1a1a1a;
+  --dark2: #2d2d2d;
+  --muted: #6b7280;
+  --white: #ffffff;
+  --bg: #fafafa;
+  --green: #25d366;
+  --radius: 16px;
+  --max: 1100px;
+  --shadow: 0 4px 24px rgba(249,115,22,0.10);
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 999;
+  background: var(--white);
+  border-bottom: 3px solid var(--orange);
+  box-shadow: 0 2px 16px rgba(249,115,22,0.10);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; background: white; }
+.nav-logo span { font-size: 20px; font-weight: 900; color: var(--dark); }
+.nav-logo span em { color: var(--orange); font-style: normal; }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-links a {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  text-decoration: none; padding: 6px 12px; border-radius: 8px; transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--orange); background: var(--orange-pale); }
+.nav-links .nav-cta {
+  background: var(--green); color: white !important;
+  padding: 8px 16px; border-radius: 10px; font-weight: 700;
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-links .nav-cta:hover { background: #1da851; }
+
+/* BURGER */
+.burger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 6px; border: none; background: none;
+}
+.burger span { display: block; width: 24px; height: 2px; background: var(--orange); border-radius: 2px; transition: all 0.3s; }
+
+/* MOBILE MENU */
+.mobile-menu { display: none; background: var(--white); border-top: 1px solid var(--orange-border); padding: 12px 20px 16px; }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; font-size: 15px; font-weight: 700; color: var(--dark); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--orange-border); }
+.mobile-menu a:last-child { border-bottom: none; margin-top: 8px; }
+.mobile-menu .mob-cta { background: var(--green); color: white !important; padding: 12px 16px; border-radius: 10px; text-align: center; border: none !important; }
+
+@media (max-width: 640px) { .nav-links { display: none; } .burger { display: flex; } }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 60%, #404040 100%);
+  padding: 60px 20px 80px; text-align: center; position: relative;
+}
+.hero::before {
+  content: ''; position: absolute; top: -40px; right: -40px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner { max-width: 640px; margin: 0 auto; position: relative; }
+.hero-logo {
+  width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+  border: 4px solid rgba(249,115,22,0.5);
+  box-shadow: 0 8px 40px rgba(249,115,22,0.3);
+  margin: 0 auto 20px; background: white;
+}
+.hero h1 { font-size: 38px; font-weight: 900; color: white; line-height: 1.1; margin-bottom: 12px; }
+.hero h1 span { color: var(--orange); }
+.hero-tagline {
+  display: inline-block; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9);
+  background: rgba(249,115,22,0.15); border-radius: 20px;
+  padding: 5px 18px; margin-bottom: 20px; border: 1px solid rgba(249,115,22,0.3);
+}
+.hero-contact { margin-bottom: 20px; }
+.hero-contact a { display: inline-block; text-decoration: none; font-size: 17px; font-weight: 700; color: white; margin: 4px 8px; }
+.hero-contact span { display: block; font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+.hero-desc { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 28px; }
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; padding-bottom: 20px; }
+.btn-orange {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange); color: white;
+  padding: 14px 24px; border-radius: 12px;
+  font-size: 15px; font-weight: 800; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(249,115,22,0.4); transition: transform 0.2s;
+}
+.btn-orange:hover { transform: translateY(-2px); background: var(--orange2); }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; color: var(--dark);
+  padding: 14px 24px; border-radius: 12px;
+  font-size: 15px; font-weight: 800; text-decoration: none; transition: transform 0.2s;
+}
+.btn-white:hover { transform: translateY(-2px); }
+
+/* SECTIONS */
+.section { padding: 60px 20px; }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+.section-label { text-align: center; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+.section-title { text-align: center; font-size: 30px; font-weight: 900; color: var(--dark); margin-bottom: 36px; line-height: 1.2; }
+
+/* SERVICES */
+.services-bg { background: var(--white); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.service-card {
+  background: var(--bg); border: 1.5px solid var(--orange-border);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(249,115,22,0.15); }
+.service-icon {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+  padding: 28px; text-align: center; font-size: 48px;
+}
+.service-body { padding: 22px; }
+.service-tag {
+  display: inline-block; font-size: 10px; font-weight: 800;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+  background: var(--orange-pale); color: var(--orange2);
+}
+.service-body h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; color: var(--dark); }
+.service-body ul { list-style: none; padding: 0; }
+.service-body ul li {
+  font-size: 13px; color: var(--muted); padding: 6px 0;
+  border-bottom: 1px solid var(--orange-border);
+  display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
+}
+.service-body ul li:last-child { border-bottom: none; }
+.service-body ul li::before { content: '→'; color: var(--orange); font-weight: 800; flex-shrink: 0; }
+.service-link { font-size: 13px; font-weight: 700; color: var(--orange); text-decoration: none; display: inline-block; margin-top: 14px; }
+
+/* POURQUOI */
+.why-section { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 60px 20px; }
+.why-section .section-label { color: rgba(249,115,22,0.8); }
+.why-section .section-title { color: white; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: var(--max); margin: 0 auto; }
+.why-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(249,115,22,0.2);
+  border-radius: var(--radius); padding: 24px; text-align: center;
+}
+.why-icon { font-size: 36px; margin-bottom: 12px; }
+.why-card h4 { font-size: 15px; font-weight: 800; color: white; margin-bottom: 8px; }
+.why-card p { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+/* FORMULAIRE */
+.forms-section { padding: 60px 20px; background: var(--bg); }
+.forms-inner { max-width: 640px; margin: 0 auto; }
+.form-card {
+  background: var(--white); border: 1.5px solid var(--orange-border);
+  border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow);
+}
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--orange-border); border-radius: 10px;
+  font-family: 'Nunito', sans-serif; font-size: 14px;
+  background: var(--bg); color: var(--dark);
+  outline: none; transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--orange); background: white; }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+.btn-submit {
+  width: 100%; padding: 15px;
+  background: var(--orange); color: white;
+  border: none; border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 800; cursor: pointer;
+  transition: all 0.2s; margin-top: 8px;
+}
+.btn-submit:hover { background: var(--orange2); transform: translateY(-1px); }
+.form-success {
+  display: none; text-align: center; padding: 20px;
+  background: #f0fdf4; border: 1px solid #86efac;
+  border-radius: 12px; margin-top: 16px;
+  font-size: 14px; color: #166534; font-weight: 700;
+}
+.form-or {
+  text-align: center; margin: 20px 0; position: relative;
+  font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: 1px;
+}
+.form-or::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--orange-border); }
+.form-or span { background: var(--white); padding: 0 14px; position: relative; z-index: 1; }
+.btn-wa-full {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--green); color: white;
+  padding: 14px; border-radius: 12px;
+  font-size: 15px; font-weight: 800; text-decoration: none; transition: transform 0.2s;
+}
+.btn-wa-full:hover { transform: translateY(-1px); }
+
+/* FOOTER */
+footer { background: var(--dark); padding: 48px 20px 28px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; text-align: center; }
+.footer-logo img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--orange); margin: 0 auto 16px; background: white; }
+.footer-name { font-size: 22px; font-weight: 900; color: white; margin-bottom: 12px; }
+.footer-info p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 2; }
+.footer-info a { color: var(--orange); text-decoration: none; }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px 0 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.3); text-decoration: none; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); margin-top: 12px; }
+
+/* WA FLOAT */
+.wa-float {
+  position: fixed; bottom: 22px; right: 22px; z-index: 999;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--green);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.5);
+  text-decoration: none; transition: transform 0.2s;
+}
+.wa-float:hover { transform: scale(1.1); }
+.ico-wa { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
+.divider { height: 1px; background: var(--orange-border); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="Phil-Fixit">
+      <span>Phil-<em>Fixit</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="#">🏠 Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#pourquoi">Pourquoi nous</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/32475240205" class="nav-cta">
+        <svg class="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.126 1.535 5.862L.057 23.737a.75.75 0 00.921.921l5.875-1.478A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.66-.499-5.197-1.373l-.373-.217-3.876.974.993-3.768-.237-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="toggleMenu()">🏠 Accueil</a>
+    <a href="#services" onclick="toggleMenu()">🔧 Services</a>
+    <a href="#pourquoi" onclick="toggleMenu()">⭐ Pourquoi nous</a>
+    <a href="#contact" onclick="toggleMenu()">📋 Contact</a>
+    <a href="https://wa.me/32475240205" class="mob-cta">💬 WhatsApp</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="images/logo.png" alt="Phil-Fixit">
+    <h1>Phil-<span>Fixit</span></h1>
+    <div class="hero-tagline">Formation · Dépannage · Web Design · Beaufays</div>
+    <div class="hero-contact">
+      <a href="tel:+32475240205">📞 +32 475 24 02 05</a>
+      <a href="mailto:infos@phil-fixit.be">✉️ infos@phil-fixit.be</a>
+      <span>Lun–Ven · 9h00 – 17h00</span>
+    </div>
+    <p class="hero-desc">Le support informatique à la portée de main. Formation, dépannage et création de sites web pour particuliers et professionnels.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-orange">📋 Demande de devis</a>
+      <a href="#services" class="btn-white">🔧 Nos services</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="section services-bg" id="services">
+  <div class="section-inner">
+    <div class="section-label">Nos Services</div>
+    <h2 class="section-title">Ce que nous proposons</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <div class="service-body">
+          <span class="service-tag">Formation</span>
+          <h3>Formation Informatique</h3>
+          <ul>
+            <li>Formation de démarrage à l'achat d'un Mac ou PC</li>
+            <li>Formation Bureautique — Suite Office</li>
+            <li>Formation Web Design — gérer votre site</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <div class="service-body">
+          <span class="service-tag">Support</span>
+          <h3>Conseil & Dépannage</h3>
+          <ul>
+            <li>Support particulier — forfaits d'heures mensuels</li>
+            <li>Support Freelance & Société — par heure, demi-journée ou journée</li>
+            <li>Recrutement de Freelance pour missions spéciales</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <div class="service-body">
+          <span class="service-tag">Web Design</span>
+          <h3>Création de Sites Web</h3>
+          <ul>
+            <li>Site vitrine ou e-commerce de A à Z</li>
+            <li>Nom de domaine & gestion des emails</li>
+            <li>Création de design — cartes de visite, flyers</li>
+            <li>Création d'applications iOS & Android</li>
+          </ul>
+          <a href="#contact" class="service-link">Demander un devis →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- POURQUOI -->
+<div class="why-section" id="pourquoi">
+  <div class="section-label">Pourquoi nous choisir</div>
+  <h2 class="section-title">Le support à la portée de main</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <h4>Réactivité</h4>
+      <p>Nous intervenons rapidement pour minimiser vos interruptions de travail.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <h4>Sur mesure</h4>
+      <p>Chaque solution est adaptée à vos besoins réels, sans superflu.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <h4>Tarifs clairs</h4>
+      <p>Devis gratuit, tarifs transparents. Pas de mauvaises surprises.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <h4>Proximité</h4>
+      <p>Un interlocuteur unique, disponible et à l'écoute à Beaufays.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FORMULAIRE -->
+<div class="forms-section" id="contact">
+  <div class="section-label">Nous contacter</div>
+  <h2 class="section-title">Demande de devis gratuit</h2>
+  <div class="forms-inner">
+    <div class="form-card">
+      <form action="https://formspree.io/f/VOTRE_ID_FIXIT" method="POST" onsubmit="handleSubmit(event,'success-contact')">
+        <div class="form-row">
+          <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" required placeholder="Philippe"></div>
+          <div class="form-group"><label>Nom *</label><input type="text" name="nom" required placeholder="Dupont"></div>
+        </div>
+        <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="vous@exemple.be"></div>
+        <div class="form-group"><label>Téléphone *</label><input type="tel" name="telephone" required placeholder="+32 4xx xx xx xx"></div>
+        <div class="form-group">
+          <label>Type de demande</label>
+          <select name="service">
+            <option>🎓 Formation informatique</option>
+            <option>🔧 Dépannage / Support</option>
+            <option>🌐 Création de site web</option>
+            <option>🎨 Création de design</option>
+            <option>📱 Application mobile</option>
+            <option>❓ Autre</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Votre message *</label><textarea name="message" required placeholder="Décrivez votre besoin..."></textarea></div>
+        <input type="hidden" name="_subject" value="📋 Nouvelle demande de devis – Phil-Fixit">
+        <input type="hidden" name="_language" value="fr">
+        <button type="submit" class="btn-submit">📋 Envoyer ma demande</button>
+        <div id="success-contact" class="form-success">✅ Merci ! Nous vous recontactons très vite pour votre devis.</div>
+      </form>
+      <div class="form-or"><span>OU</span></div>
+      <a href="https://wa.me/32475240205?text=Bonjour%20Philippe,%20je%20souhaite%20un%20devis%20pour%20Phil-Fixit%20!" class="btn-wa-full">
+        <svg class="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.126 1.535 5.862L.057 23.737a.75.75 0 00.921.921l5.875-1.478A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.66-.499-5.197-1.373l-.373-.217-3.876.974.993-3.768-.237-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Contacter sur WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Phil-Fixit"></div>
+    <div class="footer-name">Phil-Fixit</div>
+    <div class="footer-info">
+      <p>Formation · Dépannage · Web Design</p>
+      <p><a href="tel:+32475240205">+32 475 24 02 05</a> · <a href="mailto:infos@phil-fixit.be">infos@phil-fixit.be</a></p>
+      <p>Rue de Trooz 1 Bte 21, 4052 Beaufays (Liège)</p>
+      <p>Lun–Ven : 9h00 – 17h00</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://phil-mobile.be/">Phil-Mobile</a>
+      <a href="https://phil-zen.be/">Phil-Zen</a>
+      <a href="https://lylou-zen.be/">Lylou-Vely</a>
+      <a href="#">Mentions légales</a>
+    </div>
+    <div class="footer-copy">© 2026 Phil-Fixit · Tous droits réservés</div>
+  </div>
+</footer>
+
+<!-- WA FLOTTANT -->
+<a href="https://wa.me/32475240205" class="wa-float" target="_blank">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.126 1.535 5.862L.057 23.737a.75.75 0 00.921.921l5.875-1.478A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.66-.499-5.197-1.373l-.373-.217-3.876.974.993-3.768-.237-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function handleSubmit(e, successId) {
+  e.preventDefault();
+  fetch(e.target.action, { method:'POST', body:new FormData(e.target), headers:{'Accept':'application/json'} })
+    .then(r => { if(r.ok) { e.target.reset(); document.getElementById(successId).style.display='block'; } });
+}
+</script>
+</body>
+</html>
