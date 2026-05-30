@@ -1,0 +1,21 @@
+{
+  "name": "Phil-Fixit",
+  "short_name": "Phil-Fixit",
+  "description": "Formation, dépannage informatique et création de sites web à Beaufays",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#f97316",
+  "orientation": "portrait",
+  "lang": "fr",
+  "id": "phil-fixit-site",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
