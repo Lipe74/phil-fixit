@@ -1,4 +1,4 @@
-const CACHE_NAME = 'phil-fixit-v4';
+const CACHE_NAME = 'phil-fixit-v4.1';
 
 const ASSETS = [
   '/',
