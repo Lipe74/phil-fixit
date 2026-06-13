@@ -58,10 +58,16 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; background: white; }
 .nav-logo span { font-size: 20px; font-weight: 900; color: var(--dark); }
-  .logo-text{
+.logo-text{
   display:flex;
   flex-direction:column;
   line-height:1.1;
+  min-width:140px;
+}
+  .nav-logo{
+  display:flex;
+  align-items:flex-start;
+  text-decoration:none;
 }
 
 .site-version{
@@ -295,8 +301,7 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
     <div class="site-version">Version 2.6</div>
   </div>
 </a>
-    </div>
-    <div class="nav-links">
+        <div class="nav-links">
       <a href="#">🏠 Accueil</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
