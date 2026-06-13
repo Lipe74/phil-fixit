@@ -58,6 +58,18 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; background: white; }
 .nav-logo span { font-size: 20px; font-weight: 900; color: var(--dark); }
+  .logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.site-version{
+  font-size:10px;
+  font-weight:600;
+  color:#999;
+  margin-top:2px;
+}
 .nav-logo span em { color: var(--orange); font-style: normal; }
   .site-version{
   font-size:11px;
@@ -278,11 +290,11 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <img src="images/logo.png" alt="Phil-Fixit">
-      <span>Phil-<em>Fixit</em></span>
-    </a>
-    <div class="site-version">
-      Version 2.5
+  <div class="logo-text">
+    <span>Phil-<em>Fixit</em></span>
+    <div class="site-version">Version 2.6</div>
+  </div>
+</a>
     </div>
     <div class="nav-links">
       <a href="#">🏠 Accueil</a>
