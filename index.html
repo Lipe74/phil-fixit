@@ -320,6 +320,23 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
 }
 @media (max-width: 640px) { .price-badge { display: none; } }
 
+/* APPLICATIONS SUR MESURE */
+.app-showcase { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center; max-width: var(--max); margin: 0 auto; }
+.app-showcase-text p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+.app-showcase-text b { color: var(--dark); }
+.app-examples { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.app-examples a {
+  font-size: 12px; font-weight: 700; color: var(--orange2); text-decoration: none;
+  background: var(--orange-pale); border: 1px solid var(--orange-border);
+  padding: 6px 14px; border-radius: 20px;
+}
+.app-showcase-img img {
+  width: 100%; border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(249,115,22,0.15); border: 1.5px solid var(--orange-border);
+}
+@media (max-width: 760px) { .app-showcase { grid-template-columns: 1fr; } .app-showcase-img { order: -1; } }
+
+
 </style>
 </head>
 <body>
@@ -339,6 +356,7 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
       <a href="#portfolio">Portfolio</a>
       <a href="#pourquoi">Pourquoi nous</a>
       <a href="#prix">💶 Prix</a>
+      <a href="#applications">📱 Créer son app</a>
       <a href="#contact">Contact</a>
       <a href="https://wa.me/32475240205" class="nav-cta">
         <svg class="ico-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.126 1.535 5.862L.057 23.737a.75.75 0 00.921.921l5.875-1.478A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.66-.499-5.197-1.373l-.373-.217-3.876.974.993-3.768-.237-.388A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -355,6 +373,7 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
     <a href="#portfolio" onclick="toggleMenu()">🌐 Portfolio</a>
     <a href="#pourquoi" onclick="toggleMenu()">⭐ Pourquoi nous</a>
     <a href="#prix" onclick="toggleMenu()">💶 Prix</a>
+    <a href="#applications" onclick="toggleMenu()">📱 Créer son app</a>
     <a href="#contact" onclick="toggleMenu()">📋 Contact</a>
     <a href="https://wa.me/32475240205" class="mob-cta">💬 WhatsApp</a>
   </div>
@@ -423,9 +442,22 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
             <li>Site vitrine ou e-commerce de A à Z</li>
             <li>Nom de domaine & gestion des emails</li>
             <li>Création de design — cartes de visite, flyers</li>
-            <li>Création d'applications iOS & Android</li>
           </ul>
           <a href="#contact" class="service-link">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <div class="service-body">
+          <span class="service-tag">Application</span>
+          <h3>Création d'Application sur Mesure</h3>
+          <ul>
+            <li>Application web installable (PWA) pour iOS & Android</li>
+            <li>Espace pro, gestion clients, outils métier dédiés</li>
+            <li>Exemple concret : app.phil-mobile.be</li>
+          </ul>
+          <a href="#applications" class="service-link">Voir un exemple →</a>
         </div>
       </div>
 
@@ -642,6 +674,30 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
 
       <div class="price-note">
         <b style="color:var(--dark);">Bon à savoir :</b> les frais de transaction par carte (environ 1,4% + 0,25€ par paiement) sont prélevés directement par Stripe/Mollie et restent à charge du client final. TVA 21% en sus sur toutes nos formules.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- APPLICATIONS SUR MESURE -->
+<div class="section services-bg" id="applications">
+  <div class="section-inner">
+    <div class="section-label">Au-delà du site web</div>
+    <h2 class="section-title">Création d'application sur mesure</h2>
+    <div class="app-showcase">
+      <div class="app-showcase-text">
+        <p>Besoin de plus qu'un site vitrine ? Je conçois aussi des <b>applications web installables (PWA)</b>, sur mesure, pour vos clients, vos consultants ou vos équipes : tableau de bord, simulateurs, gestion de commissions, documents, messagerie interne… tout au même endroit, accessible sur smartphone comme sur ordinateur, sans passer par les stores.</p>
+        <p style="margin-top:14px;">Exemple concret réalisé pour Phil-Mobile : une application complète pour les consultants Smart SN, avec connexion sécurisée, simulateurs Orange & Eneco, calcul de commissions, documents et messagerie.</p>
+        <a href="https://app.phil-mobile.be" target="_blank" class="service-link" style="margin-top:14px;display:inline-block;">Voir l'application en ligne →</a>
+        <div class="app-examples">
+          <a href="https://app.phil-mobile.be" target="_blank">app.phil-mobile.be</a>
+          <a href="https://lylou-vely.be" target="_blank">lylou-vely.be</a>
+        </div>
+      </div>
+      <div class="app-showcase-img">
+        <img src="images/app-phil-mobile-presentation.png" alt="Exemple d'application sur mesure - Phil-Mobile Consultants">
       </div>
     </div>
   </div>
