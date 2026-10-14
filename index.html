@@ -290,35 +290,25 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
 .divider { height: 1px; background: var(--orange-border); }
 
 /* PRIX E-COMMERCE */
-.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto; position: relative; }
+.price-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 420px; margin: 0 auto; }
 .price-card {
   background: var(--white); border: 1.5px solid var(--orange-border);
   border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
 }
 .price-card-header { background: var(--orange); color: white; text-align: center; padding: 14px; font-weight: 900; font-size: 18px; }
-.price-card.alt .price-card-header { background: var(--dark); }
 .price-card-sub { text-align: center; font-size: 11px; font-weight: 800; letter-spacing: 1px; color: var(--muted); padding-top: 14px; text-transform: uppercase; }
 .price-amount { text-align: center; padding: 4px 16px 10px; }
 .price-amount .num { font-size: 36px; font-weight: 900; color: var(--orange); }
-.price-card.alt .price-amount .num { color: var(--dark); }
 .price-amount .unit { font-size: 13px; font-weight: 700; color: var(--muted); }
-.price-tag { display: inline-block; background: var(--dark); color: white; font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 6px; }
 .price-list { list-style: none; padding: 4px 22px 12px; }
 .price-list li { font-size: 13px; color: var(--muted); padding: 5px 0; line-height: 1.5; padding-left: 20px; position: relative; }
 .price-list li::before { content: '✓'; color: var(--orange); font-weight: 800; position: absolute; left: 0; }
-.price-card.alt .price-list li::before { color: var(--dark); }
-.price-after { margin: 8px 18px 16px; background: var(--orange-pale); border: 1px solid var(--orange-border); border-radius: 12px; padding: 12px 14px; font-size: 12px; color: var(--dark); }
+.price-after { margin: 8px 18px 12px; background: var(--orange-pale); border: 1px solid var(--orange-border); border-radius: 12px; padding: 12px 14px; font-size: 12px; color: var(--dark); }
 .price-after b { color: var(--orange2); display: block; font-size: 14px; margin: 2px 0; }
-.price-card.alt .price-after { background: #f3f4f6; border-color: #e5e7eb; }
-.price-card.alt .price-after b { color: var(--dark); }
+.price-monthly { margin: 0 18px 18px; text-align: center; font-size: 12px; font-weight: 700; color: var(--muted); }
+.price-monthly a { color: var(--green); text-decoration: none; border-bottom: 1px solid currentColor; }
+.price-monthly a:hover { color: #1da851; }
 .price-note { text-align: center; font-size: 12px; color: var(--muted); margin: 28px auto 0; max-width: 640px; background: var(--orange-pale); border: 1px solid var(--orange-border); border-radius: 12px; padding: 14px 18px; }
-.price-badge {
-  position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
-  width: 64px; height: 64px; border-radius: 50%; background: var(--dark); color: white;
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  font-size: 9px; font-weight: 800; line-height: 1.2; box-shadow: var(--shadow); z-index: 2;
-}
-@media (max-width: 640px) { .price-badge { display: none; } }
 
 /* APPLICATIONS SUR MESURE */
 .app-showcase { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center; max-width: var(--max); margin: 0 auto; }
@@ -347,7 +337,7 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
     <a href="#" class="nav-logo">
   <div class="logo-text">
     <span>Phil-<em>Fixit</em></span>
-    <div class="site-version">Version 2.6</div>
+    <div class="site-version">Version 2.7</div>
   </div>
 </a>
         <div class="nav-links">
@@ -575,34 +565,11 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
     <div class="section-label">Nos Tarifs</div>
     <h2 class="section-title">Transparence & clarté</h2>
     <div class="price-grid">
-        <div class="price-badge">2<br>FORMULES<br>AU CHOIX</div>
-
         <div class="price-card">
-          <div class="price-card-header">FORMULE 1</div>
-          <div class="price-card-sub">Paiement mensuel</div>
-          <div class="price-amount">
-            <span class="num">41,31 €</span> <span class="unit">/ mois HTVA</span><br>
-            <span class="price-tag">pendant 24 mois</span>
-          </div>
-          <ul class="price-list">
-            <li>Création complète du site internet</li>
-            <li>Design moderne et responsive</li>
-            <li>Nom de domaine inclus</li>
-            <li>Hébergement inclus</li>
-            <li>Formulaire de contact</li>
-            <li>Intégration des avis Google</li>
-            <li>Lien vers votre page Facebook</li>
-            <li>Référencement de base</li>
-            <li>Maintenance et mises à jour incluses durant la période du contrat</li>
-          </ul>
-          <div class="price-after">Après les 24 mois : <b>16,52 € / mois HTVA</b> pour l'hébergement, les sauvegardes, la maintenance et le support.</div>
-        </div>
-
-        <div class="price-card alt">
-          <div class="price-card-header">FORMULE 2</div>
+          <div class="price-card-header">SITE VITRINE</div>
           <div class="price-card-sub">Paiement unique</div>
           <div class="price-amount">
-            <span class="num">825 €</span> <span class="unit">HTVA</span>
+            <span class="num">999 €</span> <span class="unit">HTVA</span>
           </div>
           <ul class="price-list">
             <li>Création complète du site internet</li>
@@ -614,12 +581,13 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
             <li>Lien vers votre page Facebook</li>
             <li>Référencement de base</li>
           </ul>
-          <div class="price-after">À partir de la 2ème année : <b>16,52 € / mois HTVA</b> pour l'hébergement, les sauvegardes, la maintenance et le support.</div>
+          <div class="price-after">À partir de la 2ème année : <b>150 € / an HTVA</b> de redevance pour l'hébergement, les sauvegardes, la maintenance et le support.</div>
+          <div class="price-monthly">💬 Possibilité de paiement mensuel — <a href="https://wa.me/32475240205?text=Bonjour%20Philippe,%20je%20souhaite%20un%20paiement%20mensuel%20pour%20un%20site%20vitrine%20!" target="_blank" rel="noopener">me contacter</a></div>
         </div>
     </div>
 
     <div class="price-note" style="margin-bottom:0;">
-      TVA 21% en sus sur toutes nos formules. Options disponibles sur devis : pages supplémentaires, espace membre, réservation en ligne, galerie photos, fonctionnalités sur mesure.
+      TVA 21% en sus sur tous nos tarifs. Options disponibles sur devis : pages supplémentaires, espace membre, réservation en ligne, galerie photos, fonctionnalités sur mesure.
     </div>
 
     <div style="margin-top:56px;">
@@ -627,32 +595,8 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
       <h2 class="section-title" style="margin-bottom:32px;">Création de site e-commerce</h2>
 
       <div class="price-grid">
-        <div class="price-badge">2<br>FORMULES<br>AU CHOIX</div>
-
         <div class="price-card">
-          <div class="price-card-header">FORMULE 1</div>
-          <div class="price-card-sub">Paiement mensuel</div>
-          <div class="price-amount">
-            <span class="num">54,90 €</span> <span class="unit">/ mois HTVA</span><br>
-            <span class="price-tag">pendant 24 mois</span>
-          </div>
-          <ul class="price-list">
-            <li>Création complète du site e-commerce</li>
-            <li>Design moderne et responsive</li>
-            <li>Nom de domaine inclus</li>
-            <li>Hébergement inclus</li>
-            <li>Catalogue produits (jusqu'à 30 articles)</li>
-            <li>Panier d'achat et tunnel de commande</li>
-            <li>Paiement en ligne sécurisé (Stripe / Mollie)</li>
-            <li>Emails de confirmation automatiques</li>
-            <li>Référencement de base</li>
-            <li>Maintenance et mises à jour incluses</li>
-          </ul>
-          <div class="price-after">Après les 24 mois : <b>24,90 € / mois HTVA</b> pour l'hébergement, les sauvegardes, la maintenance et le support.</div>
-        </div>
-
-        <div class="price-card alt">
-          <div class="price-card-header">FORMULE 2</div>
+          <div class="price-card-header">SITE E-COMMERCE</div>
           <div class="price-card-sub">Paiement unique</div>
           <div class="price-amount">
             <span class="num">1490 €</span> <span class="unit">HTVA</span>
@@ -668,12 +612,13 @@ footer { background: var(--orange-pale); border-top: 2px solid var(--orange-bord
             <li>Emails de confirmation automatiques</li>
             <li>Référencement de base</li>
           </ul>
-          <div class="price-after">À partir de la 2ème année : <b>24,90 € / mois HTVA</b> pour l'hébergement, les sauvegardes, la maintenance et le support.</div>
+          <div class="price-after">À partir de la 2ème année : <b>199 € / an HTVA</b> de redevance pour l'hébergement, les sauvegardes, la maintenance et le support.</div>
+          <div class="price-monthly">💬 Possibilité de paiement mensuel — <a href="https://wa.me/32475240205?text=Bonjour%20Philippe,%20je%20souhaite%20un%20paiement%20mensuel%20pour%20un%20site%20e-commerce%20!" target="_blank" rel="noopener">me contacter</a></div>
         </div>
       </div>
 
       <div class="price-note">
-        <b style="color:var(--dark);">Bon à savoir :</b> les frais de transaction par carte (environ 1,4% + 0,25€ par paiement) sont prélevés directement par Stripe/Mollie et restent à charge du client final. TVA 21% en sus sur toutes nos formules.
+        <b style="color:var(--dark);">Bon à savoir :</b> les frais de transaction par carte (environ 1,4% + 0,25€ par paiement) sont prélevés directement par Stripe/Mollie et restent à charge du client final. TVA 21% en sus sur tous nos tarifs.
       </div>
     </div>
   </div>
